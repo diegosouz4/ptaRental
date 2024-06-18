@@ -1,0 +1,60 @@
+* {
+  font-family: var(--main-font);
+  box-sizing: border-box;
+}
+
+.container {
+  width: 94%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  br {
+    display: none;
+    @media (min-width: 850px) {
+      display: block;
+    }
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@mixin overflow {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: red;
+    @media (max-width: 768px) {
+      backdrop-filter: blur(1px);
+    }
+  }
+}
+
+@mixin scrollbar($tumbColor: var(--blue-200), $bgColor: var(--white-200)) {
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+    height: 100%;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $bgColor;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $tumbColor;
+    border: 2px solid $bgColor;
+  }
+}

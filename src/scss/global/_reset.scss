@@ -1,0 +1,53 @@
+ul,
+ol {
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+a,
+span,
+strong,
+div,
+button,
+fieldset,
+input,
+select,
+option {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+input,
+textarea,
+select,
+option {
+  border: 0;
+  background: none;
+  display: block;
+}

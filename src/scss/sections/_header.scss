@@ -1,0 +1,52 @@
+.header {
+  display: block;
+  background-color: var(--white-100);
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    padding: 1.5em 0;
+
+    .logo {
+      svg {
+        display: block;
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+      }
+    }
+
+    .header__btn {
+      background-color: var(--white-200);
+      border-radius: 0.25rem;
+      border: 1px solid var(--white-300);
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.5rem;
+      
+      @media (min-width: 850px) {
+        display: none;
+      }
+
+      position: relative;
+      transition: 450ms var(--pop);
+
+      &.show,
+      &:hover,
+      &:focus-visible {
+        color: var(--white-200);
+        background-color: var(--blue-100);
+        transform: scale(0.98);
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}

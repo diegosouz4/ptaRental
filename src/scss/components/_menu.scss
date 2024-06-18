@@ -1,0 +1,125 @@
+.menu {
+  display: block;
+
+  ul {
+    li {
+      a {
+        color: var(--blue-300);
+        font-size: clamp(0.875rem, 20vw, 1rem);
+        font-weight: 500;
+        position: relative;
+        text-decoration: none;
+
+        &.btn__menu {
+          background-color: var(--blue-200);
+          border-radius: 0.25rem;
+          color: var(--white-100);
+          display: none;
+          padding: 0.75rem 1.5rem;
+          text-align: center;
+
+          position: relative;
+          transition: 450ms var(--pop);
+
+          @media (min-width: 850px) {
+            display: block;
+          }
+
+          &:focus-visible,
+          &:hover {
+            background-color: var(--blue-100);
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+    background-color: var(--white-100);
+    box-shadow: 0 0.5rem 1rem -0.25rem rgb(0, 0, 0, 0.25);
+    border-radius: 0.25rem;
+    border: 1px solid var(--white-300);
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+
+    &.show {
+      animation: menuFadeUp 400ms ease-in-out forwards;
+    }
+
+    ul {
+      li {
+        & + li {
+          margin-top: var(--p-1-5);
+        }
+
+        a {
+          font-size: clamp(1rem, 20vw, 1.125rem);
+          font-weight: 500;
+          position: relative;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 850px) {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: var(--p-2);
+
+      li {
+        a {
+          padding: 0.25rem 0;
+
+          &:not(.btn__menu) {
+            &::after {
+              content: "";
+              background: currentColor;
+              display: block;
+              width: 100%;
+              height: 3px;
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -6px;
+              transition: 450ms var(--pop);
+              opacity: 0;
+              overflow: hidden;
+            }
+
+            &:hover,
+            &:focus-visible {
+              color: var(--blue-200);
+              &::after {
+                bottom: 2px;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes menuFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
