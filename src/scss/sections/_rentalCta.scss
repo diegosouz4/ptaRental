@@ -1,0 +1,106 @@
+.rentalCta {
+  background-color: var(--blue-200);
+  box-shadow: inset 0 1.5rem 0 0 var(--white-100);
+
+  @media (min-width: 850px) {
+    box-shadow: inset 0 1.5rem 0 0 var(--white-100),
+      inset 0 -1.5rem 0 0 var(--blue-300);
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2.5rem 1.25rem;
+
+    min-height: 550px;
+
+    @media (max-width: 850px) {
+      .rentalCta__content,
+      .rentalCta__thumb {
+        margin: 0 auto;
+      }
+    }
+
+    @media (min-width: 850px) {
+      .rentalCta__content,
+      .rentalCta__thumb {
+        width: calc(50% - 1.25rem);
+      }
+    }
+
+    .rentalCta__content {
+      max-width: 500px;
+
+      .title {
+        color: var(--white-100);
+        font-size: clamp(2.5rem, 2.2vw, 3.75rem);
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: var(--p-2);
+      }
+
+      p {
+        color: var(--white-200);
+        font-size: clamp(0.875rem, 15vw, 1rem);
+        line-height: 1.45;
+        strong {
+          font-weight: 600;
+        }
+      }
+
+      ul {
+        li {
+          & + li {
+            margin-top: var(--p-1-5);
+          }
+
+          strong {
+            color: var(--blue-200);
+            i {
+              font-size: 1.125rem;
+              font-weight: 600;
+              position: relative;
+              transform: translateY(2px);
+              margin-right: 0.3125rem;
+            }
+          }
+
+          p {
+            padding-left: var(--p-1-5);
+            margin: 0;
+            margin-top: var(--p-1);
+          }
+        }
+      }
+
+      .btn {
+        background-color: var(--white-100);
+        color: var(--blue-300);
+        margin-top: var(--p-2-5);
+
+        &:hover,
+        &:focus-visible {
+          color: var(--white-100);
+          background-color: var(--blue-100);
+        }
+      }
+    }
+
+    .rentalCta__thumb {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+      margin: 0;
+      // margin: 0 auto;
+
+      position: relative;
+      transform-origin: center;
+      @media (min-width: 850px) {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

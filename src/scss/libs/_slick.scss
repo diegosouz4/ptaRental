@@ -1,0 +1,106 @@
+.slick-initialized,
+.slick-slider {
+  position: relative;
+
+  .slick-arrow {
+    background-color: var(--white-100);
+    border-radius: 50%;
+    border: 1px solid var(--texts-color);
+    color: var(--white-100);
+    display: none;
+    font-size: 0.75rem;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+
+    @media (min-width: 850px) {
+      display: block;
+    }
+
+    opacity: 0.15;
+    transition: opacity 350ms ease-in-out;
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0.875rem;
+      height: 0.875rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      border-top: 4px solid var(--blue-100);
+    }
+
+    &.slick-prev {
+      left: 0.625rem;
+      &::before {
+        border-left: 4px solid var(--blue-100);
+        transform: translate(calc(-50% + 4px), -50%) rotate(-45deg);
+      }
+    }
+
+    &.slick-next {
+      right: 0.625rem;
+      &::before {
+        border-right: 4px solid var(--blue-100);
+        transform: translate(calc(-50% - 4px), -50%) rotate(45deg);
+      }
+    }
+  }
+
+  &.slick-dotted {
+    .slick-dots {
+      position: absolute;
+      z-index: 5;
+      bottom: 2.75rem;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3125rem;
+
+      li {
+        --sizeDot: 0.75rem;
+        background-color: var(--white-300);
+        border-radius: 50%;
+        border: 1px solid var(--texts-color);
+        color: var(--white-300);
+        display: block;
+        width: var(--sizeDot);
+        height: var(--sizeDot);
+        overflow: hidden;
+        transition: transform 450ms var(--pop), opacity 350ms ease-in-out;
+        
+        button {
+          color: currentColor;
+          font-size: 0.75rem;
+        }
+        
+        &:not(.slick-active) {
+          opacity: 0.35;
+          transform: scale(0.98);
+        }
+
+        &.slick-active {
+          background-color: var(--white-200);
+          color: var(--white-200);
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

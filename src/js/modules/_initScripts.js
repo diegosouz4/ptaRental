@@ -2,7 +2,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     initLozad();
     initMobileMenu();
-    changeHero();
+    // changeHero();
   });
 
   function initLozad() {
