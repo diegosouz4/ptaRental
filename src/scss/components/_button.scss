@@ -7,13 +7,17 @@
   font-size: clamp(0.875rem, 20vw, 1rem);
   width: 100%;
   max-width: 250px;
-  padding: 1.5rem;
+  padding: 1.125rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
   position: relative;
   transition: 350ms var(--pop);
+
+  @media (min-width: 800px) {
+    padding: 1.25rem;
+  }
 
   &:hover,
   &:focus-visible {

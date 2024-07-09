@@ -1,42 +1,32 @@
-.rentalCta {
-  background-color: var(--blue-200);
-  box-shadow: inset 0 2.5rem 0 0 var(--white-100);
-
-  @media (min-width: 850px) {
-    box-shadow: inset 0 1.5rem 0 0 var(--white-100),
-      inset 0 -1.5rem 0 0 var(--blue-300);
-  }
-
+.faq {
+  background-color: var(--blue-400);
   .container {
+    padding: 3.75rem 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
     gap: 2.5rem 1.25rem;
 
-    min-height: 550px;
-
     @media (max-width: 850px) {
-      padding-bottom: 3.75rem;
-      .rentalCta__content,
-      .rentalCta__thumb {
+      .faq__content,
+      .faq__wrapper {
         margin: 0 auto;
       }
     }
 
     @media (min-width: 850px) {
-      .rentalCta__content,
-      .rentalCta__thumb {
+      .faq__content,
+      .faq__wrapper {
         width: calc(50% - 1.25rem);
       }
     }
 
-    .rentalCta__content {
+    .faq__content {
       max-width: 500px;
 
       .title {
-        color: var(--white-100);
-        font-size: clamp(2.5rem, 2.2vw, 3.75rem);
+        color: var(--blue-200);
+        font-size: clamp(2rem, 2.2vw, 3.75rem);
         font-weight: 900;
         line-height: 1;
         margin-bottom: var(--p-2);
@@ -44,7 +34,7 @@
 
       p {
         color: var(--white-200);
-        font-size: clamp(0.875rem, 15vw, 1rem);
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
         line-height: 1.45;
         strong {
           font-weight: 600;
@@ -77,30 +67,27 @@
       }
 
       .btn {
-        background-color: var(--white-100);
-        color: var(--blue-300);
         margin-top: var(--p-2-5);
-
-        &:hover,
-        &:focus-visible {
-          color: var(--white-100);
-          background-color: var(--blue-100);
-        }
       }
     }
 
-    .rentalCta__thumb {
+    .faq__wrapper {
       display: block;
       width: 100%;
       height: auto;
       max-width: 500px;
-      margin: 0;
-      // margin: 0 auto;
+      margin: 0 auto;
 
-      position: relative;
-      transform-origin: center;
-      @media (min-width: 850px) {
-        transform: scale(1.2);
+      .faq__item {
+        color: var(--blue-200);
+
+        & + details {
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        p{
+          color: var(--white-200);
+        }
       }
     }
   }

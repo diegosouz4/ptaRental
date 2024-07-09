@@ -1,0 +1,120 @@
+.footer {
+  background-color: var(--blue-500);
+  .container {
+    padding: 3.75rem 0 1.5rem;
+
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem 1.25rem;
+    
+    @media (min-width: 600px) {
+      gap: 1.5rem 1.25rem;
+      .footer__col {
+        width: calc(50% - 0.625rem);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .footer__col {
+        width: initial;
+        flex: 0 0 300px;
+      }
+    }
+
+    .footer__logo {
+      svg {
+        max-width: 150px;
+        height: auto;
+      }
+      margin-bottom: 1.25rem;
+    }
+
+    .title {
+      font-size: clamp(1rem, 0.9vw, 1.125rem);
+      font-weight: 700;
+      color: var(--blue-200);
+      margin-bottom: 1rem;
+      max-width: 200px;
+    }
+
+    p {
+      max-width: 280px;
+      line-height: 1.4;
+    }
+
+    ul {
+      li {
+        & + li {
+          margin-top: 0.625rem;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+
+    ul,
+    li,
+    p {
+      color: var(--white-200);
+      font-size: clamp(0.75rem, 1vw, 0.875rem);
+      a {
+        color: currentColor;
+      }
+    }
+
+    .social {
+      margin-top: 1.5rem;
+      ul {
+        display: flex;
+        gap: 0.625rem;
+        li {
+          margin: 0;
+          a {
+            font-size: 0.875rem;
+            padding: 0.3125rem;
+
+            i {
+              font-size: 1.5rem;
+              transition: var(--pop) 300ms;
+              position: relative;
+              transform-origin: center;
+            }
+            
+            &:hover,
+            &:focus-visible {
+              i {
+                color: var(--blue-200);
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer__content {
+      display: block;
+      width: 100%;
+
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      p {
+        color: var(--white-200);
+        font-size: 0.75rem;
+        font-weight: 400;
+        margin: 0;
+        max-width: initial;
+      }
+    }
+  }
+}

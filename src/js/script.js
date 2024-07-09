@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   slideHero();
   slideSoluctions();
+  slideBlog();
 });
 
 function slideHero() {
@@ -42,23 +43,56 @@ function slideSoluctions() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-        }
+        },
       },
-    ]
+    ],
+  });
+}
+
+function slideBlog() {
+  const slider = {
+    wrapper: document.querySelector("[data-blogSlider='wrapper']"),
+    itens: document.querySelectorAll("[data-blogSlider='slide']"),
+  };
+
+  if (!slider.wrapper || slider.itens.length < 2) return;
+
+  $("[data-blogSlider='wrapper']").slick({
+    dots: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    lazyLoad: "ondemand",
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
 }
 

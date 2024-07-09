@@ -1,4 +1,5 @@
-.about {
+.homeContact {
+  background-color: var(--blue-300);
   .container {
     padding: 3.75rem 0;
     display: flex;
@@ -7,31 +8,32 @@
     gap: 2.5rem 1.25rem;
 
     @media (max-width: 850px) {
-      .about__content,
-      .about__thumb {
+      .homeContact__content,
+      .homeContact__thumb {
         margin: 0 auto;
       }
     }
 
     @media (min-width: 850px) {
-      .about__content,
-      .about__thumb {
+      .homeContact__content,
+      .homeContact__thumb {
         width: calc(50% - 1.25rem);
       }
     }
 
-    .about__content {
+    .homeContact__content {
       max-width: 500px;
 
       .title {
         color: var(--blue-200);
-        font-size: clamp(2rem, 3.5vw, 3.75rem);
+        font-size: clamp(2rem, 2.2vw, 3.75rem);
         font-weight: 900;
         line-height: 1;
         margin-bottom: var(--p-2);
       }
 
       p {
+        color: var(--white-200);
         font-size: clamp(0.875rem, 1.5vw, 1rem);
         line-height: 1.45;
         strong {
@@ -45,21 +47,30 @@
             margin-top: var(--p-1-5);
           }
 
-          strong {
-            color: var(--blue-200);
+          p {
             i {
+              color: var(--blue-200);
               font-size: 1.125rem;
-              font-weight: 600;
+              font-weight: 400;
               position: relative;
               transform: translateY(2px);
               margin-right: 0.3125rem;
             }
-          }
 
-          p {
-            padding-left: var(--p-1-5);
+            color: var(--white-200);
             margin: 0;
             margin-top: var(--p-1);
+
+            a {
+              color: currentColor;
+              font-size: clamp(0.75rem, 1vw, 0.875rem);
+              transform-origin: left;
+              transition: var(--pop) 300ms;
+              &:hover,
+              &:focus-visible {
+                letter-spacing: 0.5px;
+              }
+            }
           }
         }
       }
@@ -69,7 +80,7 @@
       }
     }
 
-    .about__thumb {
+    .homeContact__thumb {
       display: block;
       width: 100%;
       height: auto;
