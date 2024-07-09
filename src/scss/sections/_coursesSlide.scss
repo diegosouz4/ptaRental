@@ -1,0 +1,241 @@
+.coursesSlide {
+  background-color: var(--blue-300);
+  .container {
+    padding: 0 0 2.5rem;
+
+    .title {
+      color: var(--blue-200);
+      font-size: clamp(2.75rem, 2.2vw, 3.75rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: var(--p-2);
+    }
+
+    p {
+      color: var(--white-200);
+      font-size: clamp(0.875rem, 15vw, 1rem);
+      line-height: 1.45;
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    .coursesSlide__intro {
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      @media (min-width: 800px) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 1fr auto;
+        gap: 0.625rem;
+
+        .title {
+          grid-column: 1/-1;
+          grid-row: 1/2;
+          margin: 0;
+        }
+
+        p {
+          grid-column: 1/2;
+          grid-row: 2/-1;
+          margin: 0;
+        }
+
+        .seeMore {
+          grid-column: 2/-1;
+          grid-row: 2/-1;
+          align-self: flex-end;
+          padding: 0.3125rem;
+        }
+      }
+
+      p {
+        max-width: 500px;
+      }
+
+      .seeMore {
+        color: var(--white-300);
+        font-size: 0.875rem;
+        transform-origin: right;
+        transition: var(--pop) 300ms;
+
+        &:hover,
+        &:focus-visible {
+          color: var(--white-100);
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+
+    .coursesSlide__wrapper {
+      margin-top: 2.5rem;
+
+      &:not(.slick-initialized) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-evenly;
+
+        .wrapper__slide {
+          width: 100%;
+
+          @media (min-width: 600px) {
+            width: 50%;
+          }
+
+          @media (min-width: 900px) {
+            width: 33.33%;
+          }
+
+          @media (min-width: 1200px) {
+            width: 25%;
+          }
+        }
+      }
+
+      .wrapper__slide {
+        padding: 0.3125rem;
+
+        .card {
+          background-color: var(--blue-350);
+          border-radius: 0.25rem;
+          overflow: hidden;
+          min-height: 300px;
+
+          outline: 1px solid transparent;
+          transition: 300ms ease;
+          
+          &:hover,
+          &:focus-visible {
+            outline: 1px solid var(--blue-200);
+          }
+
+          display: grid;
+          grid-template-rows: 180px 1fr;
+
+          .card__header {
+            position: relative;
+            overflow: hidden;
+
+            .card__tags {
+              display: flex;
+              flex-direction: column;
+              gap: 0.3125rem;
+              position: absolute;
+              top: 0.625rem;
+              left: 0.625rem;
+              z-index: 1;
+
+              width: 100%;
+
+              span {
+                background-color: var(--blue-200);
+                border-radius: 2px;
+                color: var(--white-200);
+                display: block;
+                font-size: 0.75rem;
+                font-weight: 600;
+                max-width: max-content;
+                padding: 0.5rem;
+              }
+            }
+
+            .header__thumb {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+
+              position: relative;
+              inset: 0;
+            }
+          }
+
+          .card__body {
+            padding: 1.5rem 1.25rem;
+
+            display: grid;
+            grid-template-rows: 1fr auto;
+            min-height: 460px;
+            gap: 0.3125rem;
+
+            .body__content {
+              .content__info {
+                display: flex;
+                gap: 0.3125rem;
+
+                p {
+                  font-size: 0.75rem;
+                  margin: 0;
+
+                  & + p {
+                    &::before {
+                      content: "|";
+                      margin: 0 5px;
+                    }
+                  }
+                }
+              }
+
+              .content__about {
+                margin-top: 1rem;
+                .about__title {
+                  color: var(--blue-200);
+                  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+                  font-weight: 800;
+                  text-transform: uppercase;
+                  line-height: 1.1;
+                }
+
+                p,
+                ul,
+                li {
+                  color: var(--white-200);
+                  font-size: 0.875rem;
+                  max-width: initial;
+                  margin: 1rem 0 0;
+                }
+
+                ul {
+                  list-style: inside;
+                  padding-left: 0.3125rem;
+
+                  li {
+                    & + li {
+                      margin-top: 0.3125rem;
+                    }
+                  }
+                }
+              }
+            }
+
+            .content__prices {
+              .price {
+                color: var(--blue-200);
+                font-size: 1rem;
+                font-weight: 800;
+                text-align: center;
+                margin: 0;
+                strong {
+                  color: var(--white-100);
+                  font-size: clamp(2rem, 2.6vw, 3.75rem);
+                  font-weight: 800;
+                }
+              }
+
+              .btn {
+                padding: 1rem;
+                margin: 0.75rem auto 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
